@@ -11,6 +11,7 @@
             Console.WriteLine("Символ фигуры?");
             int c = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Заполнить фигуру? (y/n)");
+            bool f = Console.ReadLine().ToLower() == "y";
         }
     }
 }
