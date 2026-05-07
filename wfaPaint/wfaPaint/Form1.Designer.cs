@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            buSelect = new Button();
+            buModeArrow = new Button();
+            buCopyToClipboard = new Button();
             buLoadFromFile = new Button();
             buImageSaveToFile = new Button();
             buImageClear = new Button();
@@ -43,7 +46,9 @@
             paColor2 = new Panel();
             paColor1 = new Panel();
             pxImage = new PictureBox();
-            buCopyToClipboard = new Button();
+            buModeSquare = new Button();
+            buModeCircle = new Button();
+            buModeTriangle = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trPenWidth).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pxImage).BeginInit();
@@ -51,6 +56,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(buModeTriangle);
+            panel1.Controls.Add(buModeCircle);
+            panel1.Controls.Add(buModeSquare);
+            panel1.Controls.Add(buSelect);
+            panel1.Controls.Add(buModeArrow);
             panel1.Controls.Add(buCopyToClipboard);
             panel1.Controls.Add(buLoadFromFile);
             panel1.Controls.Add(buImageSaveToFile);
@@ -68,8 +78,35 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(229, 491);
+            panel1.Size = new Size(394, 491);
             panel1.TabIndex = 0;
+            // 
+            // buSelect
+            // 
+            buSelect.Location = new Point(200, 306);
+            buSelect.Name = "buSelect";
+            buSelect.Size = new Size(182, 41);
+            buSelect.TabIndex = 15;
+            buSelect.Text = "Select";
+            buSelect.UseVisualStyleBackColor = true;
+            // 
+            // buModeArrow
+            // 
+            buModeArrow.Location = new Point(200, 142);
+            buModeArrow.Name = "buModeArrow";
+            buModeArrow.Size = new Size(182, 41);
+            buModeArrow.TabIndex = 14;
+            buModeArrow.Text = "Arrow";
+            buModeArrow.UseVisualStyleBackColor = true;
+            // 
+            // buCopyToClipboard
+            // 
+            buCopyToClipboard.Location = new Point(12, 444);
+            buCopyToClipboard.Name = "buCopyToClipboard";
+            buCopyToClipboard.Size = new Size(182, 41);
+            buCopyToClipboard.TabIndex = 13;
+            buCopyToClipboard.Text = "Copy to clipboard";
+            buCopyToClipboard.UseVisualStyleBackColor = true;
             // 
             // buLoadFromFile
             // 
@@ -100,7 +137,7 @@
             // 
             // buModeRectangle
             // 
-            buModeRectangle.Location = new Point(12, 236);
+            buModeRectangle.Location = new Point(200, 95);
             buModeRectangle.Name = "buModeRectangle";
             buModeRectangle.Size = new Size(182, 41);
             buModeRectangle.TabIndex = 9;
@@ -185,26 +222,44 @@
             // pxImage
             // 
             pxImage.Dock = DockStyle.Fill;
-            pxImage.Location = new Point(229, 0);
+            pxImage.Location = new Point(394, 0);
             pxImage.Name = "pxImage";
-            pxImage.Size = new Size(571, 491);
+            pxImage.Size = new Size(502, 491);
             pxImage.TabIndex = 1;
             pxImage.TabStop = false;
             // 
-            // button1
+            // buModeSquare
             // 
-            buCopyToClipboard.Location = new Point(12, 444);
-            buCopyToClipboard.Name = "button1";
-            buCopyToClipboard.Size = new Size(182, 41);
-            buCopyToClipboard.TabIndex = 13;
-            buCopyToClipboard.Text = "Copy to clipboard";
-            buCopyToClipboard.UseVisualStyleBackColor = true;
+            buModeSquare.Location = new Point(12, 236);
+            buModeSquare.Name = "buModeSquare";
+            buModeSquare.Size = new Size(182, 41);
+            buModeSquare.TabIndex = 16;
+            buModeSquare.Text = "Square";
+            buModeSquare.UseVisualStyleBackColor = true;
+            // 
+            // buModeCircle
+            // 
+            buModeCircle.Location = new Point(200, 189);
+            buModeCircle.Name = "buModeCircle";
+            buModeCircle.Size = new Size(182, 41);
+            buModeCircle.TabIndex = 17;
+            buModeCircle.Text = "Circle";
+            buModeCircle.UseVisualStyleBackColor = true;
+            // 
+            // buModeTriangle
+            // 
+            buModeTriangle.Location = new Point(200, 236);
+            buModeTriangle.Name = "buModeTriangle";
+            buModeTriangle.Size = new Size(182, 41);
+            buModeTriangle.TabIndex = 18;
+            buModeTriangle.Text = "Triangle";
+            buModeTriangle.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 491);
+            ClientSize = new Size(896, 491);
             Controls.Add(pxImage);
             Controls.Add(panel1);
             Name = "Form1";
@@ -234,5 +289,10 @@
         private Button buImageSaveToFile;
         private Button buImageClear;
         private Button buCopyToClipboard;
+        private Button buModeArrow;
+        private Button buSelect;
+        private Button buModeTriangle;
+        private Button buModeCircle;
+        private Button buModeSquare;
     }
 }
