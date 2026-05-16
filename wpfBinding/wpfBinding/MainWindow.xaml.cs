@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,5 +21,56 @@ namespace wpfBinding
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var heroEx = (HeroEx)this.Resources["myHeroEx"];
+            heroEx.Name = "Name";
+            heroEx.Clan = "Clan";
+            heroEx.Description = "Description";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var heroEx = (HeroEx)this.Resources["myHeroEx"];
+            buGetName.Content = heroEx.Name;
+        }
+    }
+
+    public class Hero
+    {
+        public string? Name { get; set;  }
+        public string? Clan { get; set; }
+        public string? Description { get; set; }
+        public int HP { get; set; } = 100;
+    }
+
+    public class HeroEx : INotifyPropertyChanged
+    {
+        private string? name;
+        private string? clan;
+
+        public string? Name 
+        { 
+            get => name; 
+            set
+            {
+                name = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs (nameof(Name)));
+            } 
+        }
+        public string? Clan 
+        { 
+            get => clan; 
+            set
+            {
+                clan = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Clan)));
+            } 
+        }
+        public string? Description { get; set; }
+        public int HP { get; set; } = 100;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

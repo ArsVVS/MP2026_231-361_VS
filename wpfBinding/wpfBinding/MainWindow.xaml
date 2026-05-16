@@ -6,9 +6,31 @@
         xmlns:local="clr-namespace:wpfBinding"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300">
+    <Window.Resources>
+        <local:Hero x:Key="myHero" Name="Аладдин" Clan="Воришки" HP="95"/>
+        <local:HeroEx x:Key="myHeroEx" Name="Абу" Description="Маленькая обезьянка"/>
+    </Window.Resources>
+    
     <StackPanel>
         <TextBox x:Name="edFIO" Text="Иванов И.И."/>
         <TextBlock Text="{Binding ElementName=edFIO, Path=Text}"/>
         <TextBlock Text="{Binding ElementName=edFIO, Path=Text, StringFormat=Привет\, {0} - {0} !!!!!}"/>
+
+        <StackPanel Background="LightBlue">
+            <TextBlock Text="{Binding Source={StaticResource myHero}, Path=Name}"/>
+            <TextBlock Text="{Binding Source={StaticResource myHero}, Path=Clan}"/>
+            <TextBlock Text="{Binding Source={StaticResource myHero}, Path=HP}"/>
+        </StackPanel>
+
+        <StackPanel Background="LemonChiffon" DataContext="{StaticResource myHeroEx}">
+            <TextBox Text="{Binding Path=Name}"/>
+            <TextBox Text="{Binding Path=Clan}"/>
+            <TextBox Text="{Binding Path=Description}"/>
+            <TextBox Text="{Binding Path=HP}"/>
+            <Button Content="Изменить имя" Click="Button_Click"/>
+            <Button Content="Вернуть имя" Click="Button_Click_1" x:Name="buGetName"/>
+        </StackPanel>
     </StackPanel>
+    
+    
 </Window>
