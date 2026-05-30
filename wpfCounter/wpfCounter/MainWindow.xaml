@@ -1,0 +1,33 @@
+﻿<Window x:Class="wpfCounter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfCounter"
+        mc:Ignorable="d"
+        Title="wpfCounter" Height="550" Width="300">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+    </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Key="F2" Command="{Binding IncrementCommand}"/>
+        <KeyBinding Key="F3" Command="{Binding DecrementCommand}"/>
+        <KeyBinding Key="F4" Command="{Binding ResetCommand}"/>
+    </Window.InputBindings>
+    
+    <StackPanel>
+        <TextBlock Text="{Binding Counter}" FontSize="60" HorizontalAlignment="Center"/>
+        <Button Content="+" Command="{Binding IncrementCommand}"/>
+        <Button Content="-" Command="{Binding DecrementCommand}"/>
+        <Button Content="Reset" Command="{Binding ResetCommand}"/>
+
+        <Button Content="+10" Command="{Binding AddCommand}" CommandParameter="10"/>
+        <Button Content="+500" Command="{Binding AddCommand}" CommandParameter="500"/>
+        <Button Content="-10" Command="{Binding AddCommand}" CommandParameter="-10"/>
+        <Button Content="-500" Command="{Binding AddCommand}" CommandParameter="-500"/>
+    </StackPanel>
+</Window>
